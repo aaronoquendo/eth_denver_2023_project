@@ -1,0 +1,56 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 100vh;
+  background-color: #1c1c1f;
+  box-shadow: inset -1px 0 0 0 #232326;
+
+  &__nav{
+    display: flex;
+
+  }
+
+  &__menuItemIconWrapper{
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+    margin-right: 8px
+  }
+  &__menuItemSpan1{
+
+  }
+  &__menuItemSpan2{
+
+  }
+  &__navItem{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 4px 0px;
+    height: 32px;
+    border-radius: 4px;
+  }
+
+  &__websiteName {
+
+  }
+
+  &__menuItems {
+    list-style-type: none;
+  }
+
+  &__menuItem {
+  }
+
+  &__menuItemLink {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    color: #ededef;
+  }
+
+}
+

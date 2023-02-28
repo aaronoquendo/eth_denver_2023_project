@@ -1,0 +1,32 @@
+
+.Layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 100vh;
+  background: white;
+  &__websiteName{
+    padding: 20px 16px;
+  }
+  &__menuItems {
+
+  }
+  &__menuItem {
+  }
+  &__menuItemLink {
+    color: black;
+  }
+}
+
+.MainSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+}

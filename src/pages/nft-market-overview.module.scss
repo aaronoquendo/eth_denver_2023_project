@@ -1,0 +1,12 @@
+.NFTMarketOverview {
+  display: flex;
+  justify-content: center;
+
+  width: 80vw;
+  height: 100vh;
+
+  &__inner{
+    margin-top: 30px;
+    width: 100vw;
+  }
+}
