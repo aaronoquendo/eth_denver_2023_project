@@ -12,36 +12,31 @@ function Sidebar() {
   return (
     <div className={`${styles.Sidebar} SideBar`}>
       <div className={styles.Sidebar.__menuItems}>
-
-        <nav class={`${styles.Sidebar__nav} nav flex-column nav-pills mt-4 px-2 `}>
-          <div class={`${styles.Sidebar__navItem} nav-link active`} aria-current="page" href="#">
+        <div class="d-flex align-items-start mx-4">
+          <div class={`${styles.Sidebar__nav} nav flex-column nav-pills me-3`} id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <Link className={`${styles.Sidebar__menuItemLink} nav-link`} href="/nft-market-overview">
-              <div className={`${styles.Sidebar__menuItemIconWrapper}`}>
-                <PieChartOutlined />
+
+              <div class="d-flex nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <div className={`${styles.Sidebar__menuItemIconWrapper}`}>
+                  <PieChartOutlined />
+                </div>
+                <div> NFT Collections </div>
               </div>
 
-              <span className={`${styles.Sidebar__menuItemSpan1}`} >
-                <span className={`${styles.Sidebar__menuItemSpan2} ml-2`} >
-                  NFT Collections
-                </span>
-              </span>
             </Link>
-          </div>
-          <div class={`${styles.Sidebar__navItem} nav-link`} aria-current="page" href="#">
-            <Link className={`${styles.Sidebar__menuItemLink} nav-link`} href="/nft-portfolio">
-              <div className={`${styles.Sidebar__menuItemIconWrapper}`}>
-                <GlobalOutlined />
-              </div>
+            <div class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+              <Link className={`${styles.Sidebar__menuItemLink} nav-link`} href="/nft-portfolio">
+                <div className={`${styles.Sidebar__menuItemIconWrapper}`}>
+                  <GlobalOutlined />
+                </div>
 
-              <span className={`${styles.Sidebar__menuItemSpan1}`} >
-                <span className={`${styles.Sidebar__menuItemSpan2} ml-2`} >
-                  MY NFT Portfolio
-                </span>
-              </span>
-            </Link>
+                <div> My NFT Portfolio </div>
+              </Link>
+            </div>
+
           </div>
-   
-        </nav>
+
+        </div>
 
       </div>
     </div>

@@ -10,7 +10,7 @@ const NFTCollectionPage = () => {
   const collection = useSelector((state) => state.collection);
   const router = useRouter();
   const { contractAddress } = router.query;
-  console.log("contractAddressss", contractAddress)
+
   useEffect(() => {
     if (contractAddress) {
       dispatch(getCollection({
@@ -19,18 +19,14 @@ const NFTCollectionPage = () => {
       }))
     }
 
-  }, [contractAddress])
-  console.log("collection", collection);
+  }, [contractAddress]);
+
   return (
     <div className='NFTCollectionPage'>
       <div class="row">
-
-
-        {collection && collection.assets && collection.assets.map((token, index) => {
-          return (
-          <div class="col-6 col-md-4" key={index}>Name: {token.metadata.name}</div>
-          )
-        })}
+        {collection && (
+          <div class="col-6 col-md-4">Name: {collection.collection_name}</div>
+        )}
       </div>
     </div>
   )

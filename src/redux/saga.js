@@ -12,16 +12,13 @@ import {
 import {
   actionTypes,
   getItemSuccess,
-  getCollectionSuccess
+  getCollectionSuccess,
+  getCollectionsSuccess
 } from './actions'
 import axios from "axios";
 import config from "../util/config";
 
-
-console.log("process.env.NEXT_PUBLIC_ENV", process.env.NEXT_PUBLIC_ENV);
 const envConfig = config[process.env.NEXT_PUBLIC_ENV];
-console.log("envConfig", envConfig);
-
 function* getItems(data) {
   try {
     yield put(getItemSuccess({ item: "test" }));
@@ -29,7 +26,6 @@ function* getItems(data) {
     yield put(failure(err))
   }
 }
-
 
 function* getItem(data) {
   let response;
@@ -59,11 +55,9 @@ function* getNFTCollection(data) {
   let chainId = data.data.chainId;
   let nftCollections;
   let response;
-  let url = `${envConfig.url.backendUrl}/nfts/collection/contractAddress/${contractAddress}/chainId/${chainId}`;
-  console.log("url", url)
+  let url = `${envConfig.url.backendUrl}/collection/${contractAddress}/${chainId}`;
   try {
     response = yield axios.get(url);
-    console.log("response", response.data);
     yield put(getCollectionSuccess(response.data));
   } catch (err) {
     yield put(failure(err))
@@ -75,12 +69,11 @@ function* getNFTCollections(data) {
   let chainId = data.data.chainId;
   let nftCollections;
   let response;
-  let url = `${envConfig.url.backendUrl}/nfts/collections/${chainId}`;
-  console.log("chainId", chainId)
+  let url = `${envConfig.url.backendUrl}/collections/${chainId}`;
+
   try {
     response = yield axios.get(url);
-    console.log("response", response.data);
-    yield put(getItemSuccess({ item: response }));
+    yield put(getCollectionsSuccess(response.data));
   } catch (err) {
     yield put(failure(err))
   }

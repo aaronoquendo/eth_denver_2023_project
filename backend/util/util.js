@@ -18,4 +18,9 @@ const get = (obj, path, defaultValue = undefined) => {
   return result === undefined || result === obj ? defaultValue : result;
 };
 
-module.exports = { get };
+const isLocalEnv = () => {
+  return process.env.ENV === 'e0';
+}
+
+
+module.exports = { isLocalEnv, get };

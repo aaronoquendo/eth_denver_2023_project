@@ -17,11 +17,12 @@ import Layout from '../components/Layout/Layout';
 //   },
 // });
 
-
-
 function App({ Component, pageProps, ...rest }) {
   const {store, props} = wrapper.useWrappedStore(rest);
 
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
   // useEffect(async () => {
   //   const initWeb3Auth = async () => {
@@ -34,7 +35,6 @@ function App({ Component, pageProps, ...rest }) {
   //   initWeb3Auth();
  
   // }, [])
-
 
   return (
     <Provider store={store}>
